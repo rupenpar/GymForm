@@ -49,14 +49,8 @@ print(f"XGBoost Accuracy: {xgb_accuracy*100:.2f}")
 
 if xgb_accuracy >= rf_accuracy:
     best_model = xgb
-    best_name = "XGBoost"
-    best_acc = xgb_accuracy
-    best_preds = xgb_pred
 else:
     best_model = rf_model
-    best_name = "Random Forest"
-    best_acc = rf_accuracy
-    best_preds = rf_pred
 
 model_path = os.path.join(MODEL_DIR, "exercise_classifier.pkl")
 joblib.dump(best_model, model_path)
